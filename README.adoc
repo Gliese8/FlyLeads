@@ -1,0 +1,38 @@
+*Welcome to FlyLeads!*
+
+FlyLeads is a product that helps Outbound Sales teams, in Travel Agencies, to identify new customer leads, and tailor flight and accommodation options based on their activity on Social Media.
+
+Every day people share on Social Media their desire to go on vacation to country x and city y.
+This desire can be seen on people’s posts, comments, and even likes.
+
+With this in mind, we asked ourselves if travel agencies could reach out to these social media accounts and offered them tailored flights and accomodation options? Wouldn’t that increase the likelyhood of closing a sale? Well, FlyLeads thinks so.
+
+To do this, we had to:
+
+- Extract people’s activity (posts) on Reddit’s  Subreddits about Travelling via their official API
+- Use a ETL Pipeline to extract, prepare and store the the results accordingly in a sqlite ddbb.
+- Get the destination for each post using NLP Library spaCy for text processing and entity extraction
+- Use GoogleMaps API to get geographical data about the destinations people are talking about
+- Plot and visualize the top destinations mentioned
+- Webscrap Flights and Accomodation options from Google Travel website, to propose to potential client leads.
+- As a final output, FlyLeads generates a text file that contains the url of the post to comment on Reddit, and the text content to be used.
+
+
+FlyLeads files:
+
+1. extract_ingestion.py
+2. process.py
+3. visualizations.ipynb
+4. genRedditComm.py
+
+Modules that are imported in the process:
+
+1. flights_rapper.py
+2. hotel_scapper.py
+
+
+FlyLeads_user.db schema:
+
+1. raw_reddits table
+2. proc_log table
+3. proc_posts table
